@@ -4,6 +4,7 @@
 // Output: 5, nums = [1,1,2,2,3,_]
 // Explanation: Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
+// https://pythontutor.com/render.html
 
 
 /**
@@ -28,22 +29,15 @@ var removeDuplicates = function(nums) {
 
     return left+1;
 };
-var removeDuplicates = function(nums) {
-    if(nums.length < 2 ) return;
 
-    let i = 0, j=1, count = 0;
-
-    for(; j<nums.length; j++){
-        if(nums[i] != nums[j]){ 
-            count++; 
-        }else{
-            count++;
-            if(count == 2){
-                i++;
-                nums[i] = nums[j];
-                count = 0;
-            }
+// other approach
+const removeDuplicates = function(nums) {
+    let pos = 2;
+    for (let i = 2; i < nums.length; i++) {
+        if (nums[i] !== nums[pos -2]) {
+            nums[pos] = nums[i];
+            pos++;
         }
     }
-    return i+1;
-};
+    return pos;
+ };
