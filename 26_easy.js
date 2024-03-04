@@ -1,5 +1,6 @@
 
-/** Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. 
+/** Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.
+ * The relative order of the elements should be kept the same. 
  * Then return the number of unique elements in nums.
  * Input: nums = [1,1,2]
  * Output: 2, nums = [1,2,_]
@@ -30,6 +31,7 @@ var removeDuplicates = function(nums) {
 var removeDuplicates = function(nums) {
     const length = nums.length;
     if (length === 0) return 0;
+
     let i = 0;
     for (let j = 1; j < length; j++) {
       if (nums[j] !== nums[i]) {

@@ -14,7 +14,7 @@ var twoSum = function(numbers, target) {
     while (left < right) {
       const sum = numbers[left] + numbers[right];
       if (sum === target) return [left + 1, right + 1];
-      else if (sum < t) left++;
+      else if (sum < target) left++;
       else right--;
     }
 };

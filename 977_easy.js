@@ -13,13 +13,13 @@ var sortedSquares = function(nums) {
 
     for(let i=nums.length-1; i>=0; i--){
         const rightSquared = nums[right]**2;
-        const leftSquared = nums[right]**2;
+        const leftSquared = nums[left]**2;
 
         if(leftSquared > rightSquared){
-            nums[i] = leftSquared;
+            arr[i] = leftSquared;
             left++
         }else{
-            nums[i] = leftSquared;
+            arr[i] = rightSquared;
             right--;
         }
     }
